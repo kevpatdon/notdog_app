@@ -3,6 +3,9 @@ from PIL import Image, UnidentifiedImageError
 import streamlit as st
 from predictor import process_input
 
+if not os.path.isfile('autoencoder_model.h5'):
+    os.system('python predictor_model.py')
+
 def main():
     st.set_page_config(layout="centered")
     # Custom CSS
